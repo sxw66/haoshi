@@ -4,14 +4,24 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  // 登录
   {
     path: '/',
     name: 'Login',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
     component: () => import('@/views/Login.vue'),
   },
+  // 首页
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
     component: () => import('@/views/Home.vue'),
   },
 ]

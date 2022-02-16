@@ -1,4 +1,5 @@
 <template>
+  <!-- 登录 -->
   <div class="login">
     <vue-particles
       color="#fff"
@@ -22,7 +23,10 @@
     <div class="login-center">
       <el-form :model="loginForm" ref="loginForm" :rules="loginRules">
         <h2>Ray商城登录</h2>
-        <el-form-item>
+        <el-form-item
+          prop="username"
+          :rules="[{ required: true, message: '请输入用户名' }]"
+        >
           <el-input
             v-model="loginForm.username"
             name="username"
@@ -30,16 +34,31 @@
             auto-complete="on"
           ></el-input>
         </el-form-item>
-        <el-form-item>
+        <el-form-item
+          prop="password"
+          :rules="[{ required: true, message: '请输入密码' }]"
+        >
           <el-input
             v-model="loginForm.password"
             name="password"
+            :type="logintype"
             placeholder="请输入密码"
             auto-complete="on"
-          ></el-input>
+          >
+            <i
+              slot="suffix"
+              :class="elIcon"
+              @click="loginflag = !loginflag"
+            ></i>
+          </el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" class="login-center_btn">登录</el-button>
+          <el-button
+            type="primary"
+            class="login-center_btn"
+            @click="submitForm('loginForm')"
+            >登录</el-button
+          >
         </el-form-item>
       </el-form>
     </div>
@@ -47,31 +66,58 @@
 </template>
 <script>
 export default {
-  name: 'Home',
+  name: 'Login',
   data() {
     return {
-      mag: '',
+      loginflag: false,
       loginForm: {
         username: '',
         password: '',
       },
-      loginRules: {
-        username: [
-          {
-            required: true,
-            message: '请输入用户名',
-            trigger: 'blur',
-          },
-        ],
-        password: [
-          {
-            required: true,
-            message: '请输入密码',
-            trigger: 'blur',
-          },
-        ],
-      },
+      loginRules: {},
     }
+  },
+  methods: {
+    submitForm(loginForm) {
+      this.$refs[loginForm].validate((valid) => {
+        if (valid) {
+          // 这里调取接口存储token
+          alert('submit!')
+          // 获取当前时区穿给后端
+          var offset = new Date() + '' //将时间格式转为字符串
+          console.log(offset) //  Mon Nov 02 2020 20:57:20 GMT-0600 (北美中部标准时间)
+          let getGMT = offset.indexOf('GMT')
+          let TimeZone = offset.substring(getGMT, getGMT + 8)
+          console.log('获取当前时区', TimeZone) //-0600    //拿到这个-0600也就是当前所在时区
+          localStorage.setItem('TimeZone', TimeZone)
+          console.log('TimeZoneTimeZoneTimeZone', TimeZone)
+          // 跳转使用path来匹配路由，然后通过query来传递参数\这种情况下 query传递的参数会显示在url后面?id=？
+          // this.$router.push({
+          //   path: '/home',
+          //   query: {
+          //     TimeZone: localStorage.getItem('TimeZone'),
+          //   },
+          // })
+          this.$router.push({
+            name: 'Home',
+            params: {
+              id: localStorage.getItem('TimeZone'),
+            },
+          })
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+  },
+  computed: {
+    elIcon() {
+      return !this.loginflag ? 'el-icon-minus' : 'el-icon-view'
+    },
+    logintype() {
+      return this.loginflag ? 'password' : 'text'
+    },
   },
 }
 </script>
@@ -92,7 +138,6 @@ export default {
     }
   }
 }
-
 .el-input {
   width: 300px;
 }
