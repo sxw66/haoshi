@@ -900,7 +900,7 @@
     "@babel/types" "^7.4.4"
     "esutils" "^2.0.2"
 
-"@babel/runtime@^7.11.0", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.11.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4":
   "integrity" "sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw=="
   "resolved" "https://registry.npmmirror.com/@babel/runtime/-/runtime-7.17.2.tgz"
   "version" "7.17.2"
@@ -989,6 +989,53 @@
     "cssnano" "^4.0.0"
     "cssnano-preset-default" "^4.0.0"
     "postcss" "^7.0.0"
+
+"@jiaminghi/bezier-curve@*":
+  "integrity" "sha512-u9xJPOEl6Dri2E9FfmJoGxYQY7vYJkURNX04Vj64tdi535tPrpkuf9Sm0lNr3QTKdHQh0DdNRsaa62FLQNQEEw=="
+  "resolved" "https://registry.npmjs.org/@jiaminghi/bezier-curve/-/bezier-curve-0.0.9.tgz"
+  "version" "0.0.9"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+
+"@jiaminghi/c-render@^0.4.3":
+  "integrity" "sha512-FJfzj5hGj7MLqqqI2D7vEzHKbQ1Ynnn7PJKgzsjXaZpJzTqs2Yw5OSeZnm6l7Qj7jyPAP53lFvEQNH4o4j6s+Q=="
+  "resolved" "https://registry.npmjs.org/@jiaminghi/c-render/-/c-render-0.4.3.tgz"
+  "version" "0.4.3"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@jiaminghi/bezier-curve" "*"
+    "@jiaminghi/color" "*"
+    "@jiaminghi/transition" "*"
+
+"@jiaminghi/charts@*":
+  "integrity" "sha512-K+HXaOOeWG9OOY1VG6M4mBreeeIAPhb9X+khG651AbnwEwL6G2UtcAQ8GWCq6GzhczcLwwhIhuaHqRygwHC0sA=="
+  "resolved" "https://registry.npmjs.org/@jiaminghi/charts/-/charts-0.2.18.tgz"
+  "version" "0.2.18"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@jiaminghi/c-render" "^0.4.3"
+
+"@jiaminghi/color@*":
+  "integrity" "sha512-M09+Sb5HGqVim0zo+nG5gU1v+6gXT8ptr0BZR6dMGt83XmCJgnZtO8s7llTW4hLFFFM5co6geZvTekqLpSPAAQ=="
+  "resolved" "https://registry.npmjs.org/@jiaminghi/color/-/color-0.1.1.tgz"
+  "version" "0.1.1"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+
+"@jiaminghi/data-view@^2.10.0":
+  "integrity" "sha512-Cud2MTiMcqc5k2KWabR/svuVQmXHANqURo+yj40370/LdI/gyUJ6LG203hWXEnT1nMCeiv/SLVmxv3PXLScCeA=="
+  "resolved" "https://registry.npmjs.org/@jiaminghi/data-view/-/data-view-2.10.0.tgz"
+  "version" "2.10.0"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@jiaminghi/charts" "*"
+
+"@jiaminghi/transition@*":
+  "integrity" "sha512-owBggipoHMikDHHDW5Gc7RZYlVuvxHADiU4bxfjBVkHDAmmck+fCkm46n2JzC3j33hWvP9nSCAeh37t6stgWeg=="
+  "resolved" "https://registry.npmjs.org/@jiaminghi/transition/-/transition-1.1.11.tgz"
+  "version" "1.1.11"
+  dependencies:
+    "@babel/runtime" "^7.5.5"
 
 "@jridgewell/resolve-uri@^3.0.3":
   "integrity" "sha512-VPeQ7+wH0itvQxnG+lIzWgkysKIr3L9sslimFW55rHMdGu/qCQ5z5h9zq4gI8uBtqkpHhsF4Z/OwExufUCThew=="
@@ -3435,6 +3482,14 @@
   dependencies:
     "jsbn" "~0.1.0"
     "safer-buffer" "^2.1.0"
+
+"echarts@^5.3.0":
+  "integrity" "sha512-zENufmwFE6WjM+24tW3xQq4ICqQtI0CGj4bDVDNd3BK3LtaA/5wBp+64ykIyKy3QElz0cieKqSYP4FX9Lv9MwQ=="
+  "resolved" "https://registry.npmjs.org/echarts/-/echarts-5.3.0.tgz"
+  "version" "5.3.0"
+  dependencies:
+    "tslib" "2.3.0"
+    "zrender" "5.3.0"
 
 "ee-first@1.1.1":
   "integrity" "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow=="
@@ -8184,6 +8239,11 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   "version" "2.3.1"
 
+"tslib@2.3.0":
+  "integrity" "sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.0.tgz"
+  "version" "2.3.0"
+
 "tty-browserify@0.0.0":
   "integrity" "sha512-JVa5ijo+j/sOoHGjw0sxw734b1LhBkQ3bvUGNdxnVXDCX81Yx7TFgnZygxrIIWn23hbfTaMYLwRmAxFyDuFmIw=="
   "resolved" "https://registry.npmmirror.com/tty-browserify/-/tty-browserify-0.0.0.tgz"
@@ -8891,3 +8951,10 @@
     "is-ci" "^1.0.10"
     "normalize-path" "^1.0.0"
     "strip-indent" "^2.0.0"
+
+"zrender@5.3.0":
+  "integrity" "sha512-Ln2QB5uqI1ftNYMtCRxd+XDq6MOttLgam2tmhKAVA+j0ko47UT+VNlDvKTkqe4K2sJhBvB0EhYNLebqlCTjatQ=="
+  "resolved" "https://registry.npmjs.org/zrender/-/zrender-5.3.0.tgz"
+  "version" "5.3.0"
+  dependencies:
+    "tslib" "2.3.0"
