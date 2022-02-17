@@ -1,14 +1,20 @@
 <template>
   <!-- 首页 -->
   <div>
-    <!-- 图表 -->
-    <!-- <div id="main" style="width: 600px; height: 400px"></div> -->
-
-    <dv-flyline-chart-enhanced
-      :config="config"
-      :dev="true"
-      style="width: 100vw; height: 100vh"
-    />
+    <div class="homepage">
+      <!-- 大屏化 -->
+      <dv-flyline-chart-enhanced
+        :config="config"
+        :dev="true"
+        style="width: 50vw; height: 50vh"
+      />
+      <!-- 图表 -->
+      <div id="main" style="width: 600px; height: 400px"></div>
+    </div>
+    <el-row>
+      <el-button type="primary" round @click="gotest">主要按钮</el-button>
+      <el-button type="success" round @click="gotest">成功按钮</el-button>
+    </el-row>
   </div>
 </template>
 
@@ -18,26 +24,26 @@ export default {
   mounted() {
     console.log('登陆页过来的参数', this.$route.params.id)
     // console.log('登陆页过来的参数', this.$route.query.id)
-    // var echarts = require('echarts')
-    // var myChart = echarts.init(document.getElementById('main'))
+    var echarts = require('echarts')
+    var myChart = echarts.init(document.getElementById('main'))
     // 绘制图表
-    // myChart.setOption({
-    //   title: {
-    //     text: 'ECharts 入门示例',
-    //   },
-    //   tooltip: {},
-    //   xAxis: {
-    //     data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
-    //   },
-    //   yAxis: {},
-    //   series: [
-    //     {
-    //       name: '销量',
-    //       type: 'bar',
-    //       data: [5, 20, 36, 10, 10, 20],
-    //     },
-    //   ],
-    // })
+    myChart.setOption({
+      title: {
+        text: 'ECharts 入门示例',
+      },
+      tooltip: {},
+      xAxis: {
+        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+      },
+      yAxis: {},
+      series: [
+        {
+          name: '销量',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20],
+        },
+      ],
+    })
   },
   data() {
     return {
@@ -210,16 +216,23 @@ export default {
           show: true,
         },
         k: 0.5,
-        bgImgSrc: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg-qn.51miz.com%2Fpreview%2Felement%2F00%2F01%2F10%2F60%2FE-1106036-D0E2961F.jpg&refer=http%3A%2F%2Fimg-qn.51miz.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647597701&t=658e226059caf9d208fbd1dcbb50ccd2',
+        bgImgSrc:
+          'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg-qn.51miz.com%2Fpreview%2Felement%2F00%2F01%2F10%2F60%2FE-1106036-D0E2961F.jpg&refer=http%3A%2F%2Fimg-qn.51miz.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647597701&t=658e226059caf9d208fbd1dcbb50ccd2',
       },
     }
   },
   methods: {
-    resetForm(formName) {
-      this.$refs[formName].resetFields()
+    gotest() {
+      this.$router.push({
+        path: '/vuextest',
+      })
     },
   },
 }
 </script>
 
-<style></style>
+<style scoped lang="less">
+.homepage {
+  display: flex;
+}
+</style>

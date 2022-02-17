@@ -24,6 +24,16 @@ const routes = [
     },
     component: () => import('@/views/Home.vue'),
   },
+  // 首页
+  {
+    path: '/vuextest',
+    name: 'Vuextest',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/Vuextest.vue'),
+  },
 ]
 
 const router = new VueRouter({
