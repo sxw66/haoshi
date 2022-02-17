@@ -1,39 +1,20 @@
 <template>
   <!-- 首页 -->
   <div>
-    <!-- 图表 -->
-    <div id="main" style="width: 600px; height: 400px"></div>
-    
-    <!-- 分析 -->
-    <el-form
-      :model="ruleForm"
-      :rules="rules"
-      ref="ruleForm"
-      label-width="100px"
-      class="demo-ruleForm"
-    >
-      <el-form-item label="活动区域" prop="region">
-        <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
-          <el-option label="区域一" value="shanghai"></el-option>
-          <el-option label="区域二" value="beijing"></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="即时配送" prop="delivery">
-        <el-switch v-model="ruleForm.delivery"></el-switch>
-      </el-form-item>
-      <el-form-item label="特殊资源" prop="resource">
-        <el-radio-group v-model="ruleForm.resource">
-          <el-radio label="线上品牌商赞助"></el-radio>
-          <el-radio label="线下场地免费"></el-radio>
-        </el-radio-group>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')"
-          >立即创建</el-button
-        >
-        <el-button @click="resetForm('ruleForm')">重置</el-button>
-      </el-form-item>
-    </el-form>
+    <div class="homepage">
+      <!-- 大屏化 -->
+      <dv-flyline-chart-enhanced
+        :config="config"
+        :dev="true"
+        style="width: 50vw; height: 50vh"
+      />
+      <!-- 图表 -->
+      <div id="main" style="width: 600px; height: 400px"></div>
+    </div>
+    <el-row>
+      <el-button type="primary" round @click="gotest">主要按钮</el-button>
+      <el-button type="success" round @click="gotest">成功按钮</el-button>
+    </el-row>
   </div>
 </template>
 
@@ -71,32 +52,187 @@ export default {
         delivery: false,
         resource: '',
       },
-      rules: {
-        region: [
-          { required: true, message: '请选择活动区域', trigger: 'change' },
+      config: {
+        points: [
+          {
+            name: '郑州',
+            coordinate: [0.48, 0.35],
+            halo: {
+              show: true,
+            },
+            icon: {
+              src: 'https://img2.baidu.com/it/u=837367436,1239285443&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+              width: 30,
+              height: 30,
+            },
+            text: {
+              show: false,
+            },
+          },
+          {
+            name: '新乡',
+            coordinate: [0.52, 0.23],
+          },
+          {
+            name: '焦作',
+            coordinate: [0.43, 0.29],
+          },
+          {
+            name: '开封',
+            coordinate: [0.59, 0.35],
+          },
+          {
+            name: '许昌',
+            coordinate: [0.53, 0.47],
+          },
+          {
+            name: '平顶山',
+            coordinate: [0.45, 0.54],
+          },
+          {
+            name: '洛阳',
+            coordinate: [0.36, 0.38],
+          },
+          {
+            name: '周口',
+            coordinate: [0.62, 0.55],
+          },
+          {
+            name: '漯河',
+            coordinate: [0.56, 0.56],
+          },
+          {
+            name: '南阳',
+            coordinate: [0.37, 0.66],
+          },
+          {
+            name: '信阳',
+            coordinate: [0.55, 0.81],
+          },
+          {
+            name: '驻马店',
+            coordinate: [0.55, 0.67],
+          },
+          {
+            name: '济源',
+            coordinate: [0.37, 0.29],
+          },
+          {
+            name: '三门峡',
+            coordinate: [0.2, 0.36],
+          },
+          {
+            name: '商丘',
+            coordinate: [0.76, 0.41],
+          },
+          {
+            name: '鹤壁',
+            coordinate: [0.59, 0.18],
+          },
+          {
+            name: '濮阳',
+            coordinate: [0.68, 0.17],
+          },
+          {
+            name: '安阳',
+            coordinate: [0.59, 0.1],
+          },
         ],
-        resource: [
-          { required: true, message: '请选择活动资源', trigger: 'change' },
+        lines: [
+          {
+            source: '新乡',
+            target: '郑州',
+          },
+          {
+            source: '焦作',
+            target: '郑州',
+          },
+          {
+            source: '开封',
+            target: '郑州',
+          },
+          {
+            source: '许昌',
+            target: '郑州',
+          },
+          {
+            source: '平顶山',
+            target: '郑州',
+          },
+          {
+            source: '洛阳',
+            target: '郑州',
+          },
+          {
+            source: '周口',
+            target: '郑州',
+          },
+          {
+            source: '漯河',
+            target: '郑州',
+          },
+          {
+            source: '南阳',
+            target: '郑州',
+          },
+          {
+            source: '信阳',
+            target: '郑州',
+          },
+          {
+            source: '驻马店',
+            target: '郑州',
+          },
+          {
+            source: '济源',
+            target: '郑州',
+          },
+          {
+            source: '三门峡',
+            target: '郑州',
+          },
+          {
+            source: '商丘',
+            target: '郑州',
+          },
+          {
+            source: '鹤壁',
+            target: '郑州',
+          },
+          {
+            source: '濮阳',
+            target: '郑州',
+          },
+          {
+            source: '安阳',
+            target: '郑州',
+          },
         ],
+        icon: {
+          show: true,
+          src: 'https://img2.baidu.com/it/u=837367436,1239285443&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+        },
+        text: {
+          show: true,
+        },
+        k: 0.5,
+        bgImgSrc:
+          'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg-qn.51miz.com%2Fpreview%2Felement%2F00%2F01%2F10%2F60%2FE-1106036-D0E2961F.jpg&refer=http%3A%2F%2Fimg-qn.51miz.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647597701&t=658e226059caf9d208fbd1dcbb50ccd2',
       },
     }
   },
   methods: {
-    submitForm(formName) {
-      this.$refs[formName].validate((valid) => {
-        if (valid) {
-          alert('submit!')
-        } else {
-          console.log('error submit!!')
-          return false
-        }
+    gotest() {
+      this.$router.push({
+        path: '/vuextest',
       })
-    },
-    resetForm(formName) {
-      this.$refs[formName].resetFields()
     },
   },
 }
 </script>
 
-<style></style>
+<style scoped lang="less">
+.homepage {
+  display: flex;
+}
+</style>
