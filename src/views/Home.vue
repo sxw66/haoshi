@@ -1,20 +1,73 @@
 <template>
   <!-- 首页 -->
   <div>
-    <div class="homepage">
-      <!-- 大屏化 -->
-      <dv-flyline-chart-enhanced
-        :config="config"
-        :dev="true"
-        style="width: 50vw; height: 50vh"
-      />
-      <!-- 图表 -->
-      <div id="main" style="width: 600px; height: 400px"></div>
-    </div>
-    <el-row>
-      <el-button type="primary" round @click="gotest">主要按钮</el-button>
-      <el-button type="success" round @click="gotest">成功按钮</el-button>
-    </el-row>
+    <el-header>Welcome 大白菜系统</el-header>
+    <el-container>
+      <el-aside style="width: 200px; overflow: hidden">
+        <el-menu
+          default-active="2"
+          class="el-menu-vertical-demo"
+          @open="handleOpen"
+          @select="handleSelect"
+          @close="handleClose"
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
+          <el-submenu index="1">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>中国</span>
+            </template>
+          </el-submenu>
+
+          <el-menu-item index="2">
+            <i class="el-icon-menu"></i>
+            <span slot="title">阿联酋 </span>
+          </el-menu-item>
+          
+          <el-menu-item index="3" disabled>
+            <i class="el-icon-document"></i>
+            <span slot="title">安哥拉</span>
+          </el-menu-item>
+          <el-menu-item index="4">
+            <i class="el-icon-setting"></i>
+            <span slot="title">阿根廷</span>
+          </el-menu-item>
+          <el-menu-item index="5">
+            <i class="el-icon-setting"></i>
+            <span slot="title">奥地利</span>
+          </el-menu-item>
+          <el-menu-item index="5">
+            <i class="el-icon-setting"></i>
+            <span slot="title">澳大利亚</span>
+          </el-menu-item>
+        </el-menu>
+      </el-aside>
+      <el-main>
+        <div class="homepage">
+          <!-- 大屏化 -->
+          <dv-flyline-chart-enhanced
+            v-if="menuflag == 2"
+            :config="config"
+            :dev="true"
+            style="width: 100vw; height: 50vh"
+          />
+          <h1 v-if="menuflag == 4">
+            <el-row>
+              <el-button type="primary" round @click="gotest"
+                >主要按钮</el-button
+              >
+              <el-button type="success" round @click="gotest"
+                >成功按钮</el-button
+              >
+            </el-row>
+          </h1>
+          <!-- 图表 -->
+          <div id="main" v-else style="width: 600px; height: 400px"></div>
+        </div>
+      </el-main>
+    </el-container>
   </div>
 </template>
 
@@ -29,7 +82,7 @@ export default {
     // 绘制图表
     myChart.setOption({
       title: {
-        text: 'ECharts 入门示例',
+        text: 'ECharts 销售情况',
       },
       tooltip: {},
       xAxis: {
@@ -47,11 +100,8 @@ export default {
   },
   data() {
     return {
-      ruleForm: {
-        region: '',
-        delivery: false,
-        resource: '',
-      },
+      menuflag: 2,
+      isCollapse: true,
       config: {
         points: [
           {
@@ -227,6 +277,17 @@ export default {
         path: '/vuextest',
       })
     },
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath)
+      this.menuflag = key
+      console.log('menuflag', this.menuflag)
+    },
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath)
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath)
+    },
   },
 }
 </script>
@@ -234,5 +295,40 @@ export default {
 <style scoped lang="less">
 .homepage {
   display: flex;
+}
+.el-header,
+.el-footer {
+  // background-color: #b3c0d1;
+  background: linear-gradient(to right, blue, pink);
+  color: #333;
+  text-align: center;
+  line-height: 60px;
+}
+
+.el-aside {
+  background-color: #d3dce6;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
+}
+
+.el-main {
+  background-color: #e9eef3;
+  color: #333;
+  text-align: center;
+  line-height: 160px;
+}
+
+body > .el-container {
+  margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
 }
 </style>
