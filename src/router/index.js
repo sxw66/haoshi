@@ -24,7 +24,7 @@ const routes = [
     },
     component: () => import('@/views/Home.vue'),
   },
-  // 首页
+  // 首页vuextest
   {
     path: '/vuextest',
     name: 'Vuextest',
@@ -33,6 +33,15 @@ const routes = [
       keepAlive: true,
     },
     component: () => import('@/views/Vuextest.vue'),
+  },
+  {
+    path: '/formtest',
+    name: 'formtest',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/Formtest.vue'),
   },
 ]
 
