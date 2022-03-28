@@ -25,7 +25,7 @@
             <i class="el-icon-menu"></i>
             <span slot="title">阿联酋 </span>
           </el-menu-item>
-          
+
           <el-menu-item index="3" disabled>
             <i class="el-icon-document"></i>
             <span slot="title">安哥拉</span>
@@ -54,14 +54,28 @@
             style="width: 100vw; height: 50vh"
           />
           <h1 v-if="menuflag == 4">
-            <el-row>
-              <el-button type="primary" round @click="gotest"
-                >主要按钮</el-button
+            <div class="tag-group">
+              <span class="tag-group__title">Dark</span>
+              <el-tag
+                v-for="item in items"
+                :key="item.label"
+                :type="item.type"
+                effect="dark"
               >
-              <el-button type="success" round @click="gotest"
-                >成功按钮</el-button
+                {{ item.label }}
+              </el-tag>
+            </div>
+            <div class="tag-group">
+              <span class="tag-group__title">Plain</span>
+              <el-tag
+                v-for="item in items"
+                :key="item.label"
+                :type="item.type"
+                effect="plain"
               >
-            </el-row>
+                {{ item.label }}
+              </el-tag>
+            </div>
           </h1>
           <!-- 图表 -->
           <div id="main" v-else style="width: 600px; height: 400px"></div>
@@ -100,6 +114,13 @@ export default {
   },
   data() {
     return {
+      items: [
+        { type: '', label: '标签一' },
+        { type: 'success', label: '标签二' },
+        { type: 'info', label: '标签三' },
+        { type: 'danger', label: '标签四' },
+        { type: 'warning', label: '标签五' },
+      ],
       menuflag: 2,
       isCollapse: true,
       config: {
