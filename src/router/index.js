@@ -41,7 +41,16 @@ const routes = [
       auth: false,
       keepAlive: true,
     },
-    component: () => import('@/views/Formtest.vue'),
+    component: () => import('@/views/formdemo/Formtest.vue'),
+  },
+  {
+    path: '/formvalidate',
+    name: 'formvalidate',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/formdemo/validate.vue'),
   },
 ]
 
