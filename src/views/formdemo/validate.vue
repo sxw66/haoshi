@@ -69,6 +69,8 @@ export default {
       this.$refs['form'].validate((valid) => {
         console.log(valid) // true/false
       })
+      this.$refs['form'].validate()
+      console.log(this.$refs['form'].validate())
     },
 
     /**
@@ -79,6 +81,10 @@ export default {
         console.log(errorMessage)
         let valid = errorMessage == '' ? true : false
         console.log(valid) // true/false
+        console.log(
+          ' this.$refs.validateField',
+          this.$refs['form'].validateField
+        )
       })
     },
 
