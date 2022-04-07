@@ -4,6 +4,7 @@
     <h3>这里是Vuextest组件</h3>
     <el-button type="primary" @click="clickHandler">修改自己文本</el-button>
     <div>Test: {{ msg }}</div>
+    <hr />
   </div>
 </template>
 
@@ -15,6 +16,9 @@ export default {
     msg() {
       return store.state.testMsg
     },
+  },
+  data() {
+    return {}
   },
   methods: {
     clickHandler() {

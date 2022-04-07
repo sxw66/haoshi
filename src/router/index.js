@@ -24,7 +24,7 @@ const routes = [
     },
     component: () => import('@/views/Home.vue'),
   },
-  // 首页
+  // 首页vuextest-demo
   {
     path: '/vuextest',
     name: 'Vuextest',
@@ -33,6 +33,34 @@ const routes = [
       keepAlive: true,
     },
     component: () => import('@/views/Vuextest.vue'),
+  },
+  // 评论组件-demo
+  {
+    path: '/Vuecomment',
+    name: 'vuecomment',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/Comment/Vuecomment.vue'),
+  },
+  {
+    path: '/formtest',
+    name: 'formtest',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/formdemo/Formtest.vue'),
+  },
+  {
+    path: '/formvalidate',
+    name: 'formvalidate',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/formdemo/validate.vue'),
   },
 ]
 

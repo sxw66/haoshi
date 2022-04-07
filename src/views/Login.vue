@@ -23,10 +23,7 @@
     <div class="login-center">
       <el-form :model="loginForm" ref="loginForm" :rules="loginRules">
         <h2>Ray商城登录</h2>
-        <el-form-item
-          prop="username"
-          :rules="[{ required: true, message: '请输入用户名' }]"
-        >
+        <el-form-item prop="username">
           <el-input
             v-model="loginForm.username"
             name="username"
@@ -34,10 +31,7 @@
             auto-complete="on"
           ></el-input>
         </el-form-item>
-        <el-form-item
-          prop="password"
-          :rules="[{ required: true, message: '请输入密码' }]"
-        >
+        <el-form-item prop="password">
           <el-input
             v-model="loginForm.password"
             name="password"
@@ -68,13 +62,30 @@
 export default {
   name: 'Login',
   data() {
+    var validateMobile = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('请输入手机号码'))
+      } else if (value !== '13637060395') {
+        callback(new Error('手机号码不合法!'))
+      } else {
+        callback()
+      }
+    }
     return {
       loginflag: false,
       loginForm: {
         username: '',
         password: '',
       },
-      loginRules: {},
+      loginRules: {
+        username: [
+          {
+            validator: validateMobile,
+            required: true,
+          },
+        ],
+        email: [{ required: true, message: '请输入邮箱' }],
+      },
     }
   },
   methods: {
@@ -82,7 +93,11 @@ export default {
       this.$refs[loginForm].validate((valid) => {
         if (valid) {
           // 这里调取接口存储token
-          alert('submit!')
+          this.$message({
+            showClose: true,
+            message: '恭喜你，这是一条成功消息',
+            type: 'success',
+          })
           // 获取当前时区穿给后端
           var offset = new Date() + '' //将时间格式转为字符串
           console.log(offset) //  Mon Nov 02 2020 20:57:20 GMT-0600 (北美中部标准时间)
