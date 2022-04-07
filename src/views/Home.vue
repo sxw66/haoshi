@@ -14,19 +14,17 @@
           text-color="#fff"
           active-text-color="#ffd04b"
         >
-          <el-submenu index="1">
+          <el-submenu index="1" disabled>
             <template slot="title">
               <i class="el-icon-location"></i>
               <span>中国</span>
             </template>
           </el-submenu>
-
           <el-menu-item index="2">
             <i class="el-icon-menu"></i>
             <span slot="title">阿联酋 </span>
           </el-menu-item>
-
-          <el-menu-item index="3" disabled>
+          <el-menu-item index="3">
             <i class="el-icon-document"></i>
             <span slot="title">安哥拉</span>
           </el-menu-item>
@@ -38,7 +36,7 @@
             <i class="el-icon-setting"></i>
             <span slot="title">奥地利</span>
           </el-menu-item>
-          <el-menu-item index="5">
+          <el-menu-item index="6">
             <i class="el-icon-setting"></i>
             <span slot="title">澳大利亚</span>
           </el-menu-item>
@@ -77,9 +75,16 @@
               </el-tag>
             </div>
           </h1>
-          <!-- 图表 -->
-          <div id="main" v-else style="width: 600px; height: 400px"></div>
+          <div style="display: flex; margin-top: 10px">
+            <el-button type="primary">vuex组件demo</el-button>
+            <el-button type="primary" @click="PLdemo">评论组件demo</el-button>
+            <el-button type="primary">222</el-button>
+            <el-button type="primary">333</el-button>
+            <el-button type="primary">444</el-button>
+          </div>
         </div>
+        <!-- 图表 -->
+        <!-- <div id="main" style="width: 50vw; height: 400px"></div> -->
       </el-main>
     </el-container>
   </div>
@@ -90,27 +95,7 @@ export default {
   name: 'Home',
   mounted() {
     console.log('登陆页过来的参数', this.$route.params.id)
-    // console.log('登陆页过来的参数', this.$route.query.id)
-    var echarts = require('echarts')
-    var myChart = echarts.init(document.getElementById('main'))
     // 绘制图表
-    myChart.setOption({
-      title: {
-        text: 'ECharts 销售情况',
-      },
-      tooltip: {},
-      xAxis: {
-        data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
-      },
-      yAxis: {},
-      series: [
-        {
-          name: '销量',
-          type: 'bar',
-          data: [5, 20, 36, 10, 10, 20],
-        },
-      ],
-    })
   },
   data() {
     return {
@@ -293,15 +278,39 @@ export default {
     }
   },
   methods: {
-    gotest() {
+    PLdemo() {
       this.$router.push({
-        path: '/vuextest',
+        path: '/Vuecomment',
       })
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath)
       this.menuflag = key
-      console.log('menuflag', this.menuflag)
+      switch (key) {
+        case '1': // 禁用
+          break
+        case '2': // 大屏化
+          break
+        case '3':
+          this.$router.push({
+            path: '/vuextest',
+          })
+          break
+        case '4': // tag标签
+          break
+        case '5': // formtest
+          this.$router.push({
+            path: '/formtest',
+          })
+          break
+        case '6': // formvalidate
+          this.$router.push({
+            path: '/formvalidate',
+          })
+          break
+        default:
+          ''
+      }
     },
     handleOpen(key, keyPath) {
       console.log(key, keyPath)
@@ -315,12 +324,12 @@ export default {
 
 <style scoped lang="less">
 .homepage {
-  display: flex;
+  // display: flex;
 }
 .el-header,
 .el-footer {
   // background-color: #b3c0d1;
-  background: linear-gradient(to right, blue, pink);
+  background: linear-gradient(to right, rgb(31, 31, 103), rgb(241, 199, 206));
   color: #333;
   text-align: center;
   line-height: 60px;

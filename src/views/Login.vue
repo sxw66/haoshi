@@ -93,7 +93,11 @@ export default {
       this.$refs[loginForm].validate((valid) => {
         if (valid) {
           // 这里调取接口存储token
-          alert('submit!')
+          this.$message({
+            showClose: true,
+            message: '恭喜你，这是一条成功消息',
+            type: 'success',
+          })
           // 获取当前时区穿给后端
           var offset = new Date() + '' //将时间格式转为字符串
           console.log(offset) //  Mon Nov 02 2020 20:57:20 GMT-0600 (北美中部标准时间)
