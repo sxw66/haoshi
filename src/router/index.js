@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
-
+// 记录工作中遇到一些问题-的测试demo
 const routes = [
   // 登录
   {
@@ -44,6 +44,7 @@ const routes = [
     },
     component: () => import('@/views/Comment/Vuecomment.vue'),
   },
+
   {
     path: '/formtest',
     name: 'formtest',

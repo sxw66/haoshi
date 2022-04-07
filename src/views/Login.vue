@@ -95,7 +95,7 @@ export default {
           // 这里调取接口存储token
           this.$message({
             showClose: true,
-            message: '恭喜你，这是一条成功消息',
+            message: '登录成功!',
             type: 'success',
           })
           // 获取当前时区穿给后端
@@ -120,7 +120,11 @@ export default {
             },
           })
         } else {
-          console.log('error submit!!')
+          this.$message({
+            showClose: true,
+            message: '登录失败!',
+            type: 'error',
+          })
           return false
         }
       })
