@@ -3,7 +3,8 @@
     <h1>这是一个评论测试页面</h1>
     <hr />
     <comment
-      @doChidSend="sendfn"
+      @doSend="parentsendfn"
+      @doChidSend="childsendfn"
       :commentList="list"
       label="作者师浩浩"
       ref="abc"
@@ -53,11 +54,27 @@ export default {
     }
   },
   methods: {
-    sendfn() {
-      console.log('this.$refs.abc', this.$refs.abc)
-      console.log('this.$refs.222', this.$refs.abc.commentList)
+    //  初始文本框发送事件
+    parentsendfn(content) {
+      console.log('content,bid,pid1111', content)
+      this.list.push({
+        id: 1,
+        commentUser: {
+          id: 1,
+          nickName: '师浩浩',
+          avatar:
+            'https://img1.baidu.com/it/u=1632120736,2257211314&fm=253&fmt=auto&app=138&f=JPEG?w=563&h=500',
+        },
+        content: 'content',
+        createDate: new Date(),
+      })
+    },
+    // 评论列表中文本框发送事件
+    childsendfn(content, bid, pid) {
+      console.log('评论内容', content)
+      console.log('被评论用户id', bid)
+      console.log('父级评论id', pid)
       this.$refs.abc.commentList.forEach((element) => {
-        console.log('element', element.childrenList)
         element.childrenList.push({
           id: 3,
           commentUser: {
@@ -71,11 +88,10 @@ export default {
             avatar:
               'http://qzapp.qlogo.cn/qzapp/101483738/6637A2B6611592A44A7699D14E13F7F7/50',
           },
-          content: '1真的就很棒！很Nice!',
+          content: content,
           createDate: new Date(),
         })
       })
-      console.log('this.$refs.3333', this.$refs.abc.commentList)
     },
   },
 }
