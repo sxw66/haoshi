@@ -1,5 +1,5 @@
 <template>
-  <!-- 按照设计稿样式--重构111 -->
+  <!-- 按照设计稿样式--重构119991222 -->
   <div class="hbl-fa">
     <div class="hbl-comm">
       <div class="comment-avatar" v-if="showAvatar">
