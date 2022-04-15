@@ -44,7 +44,7 @@ const routes = [
     },
     component: () => import('@/views/Comment/Vuecomment.vue'),
   },
-
+  // element 表单组件-demo
   {
     path: '/formtest',
     name: 'formtest',
@@ -53,15 +53,6 @@ const routes = [
       keepAlive: true,
     },
     component: () => import('@/views/formdemo/Formtest.vue'),
-  },
-  {
-    path: '/formvalidate',
-    name: 'formvalidate',
-    meta: {
-      auth: false,
-      keepAlive: true,
-    },
-    component: () => import('@/views/formdemo/validate.vue'),
   },
 ]
 
