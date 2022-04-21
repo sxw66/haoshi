@@ -7,7 +7,7 @@
         <el-button @click="Vuexdemo">vuex组件demo</el-button>
         <el-button type="primary" @click="PLdemo">评论组件demo</el-button>
         <el-button type="success" @click="Fromdemo">element表单-demo</el-button>
-        <el-button type="info" @click="Imgdemo">Img图片上传-demo</el-button>
+        <el-button type="info" @click="Stepdemo">Step步进器-demo</el-button>
         <el-button type="warning">警告按钮</el-button>
         <el-button type="danger">危险按钮</el-button>
       </div>
@@ -67,6 +67,12 @@ export default {
     Imgdemo() {
       this.$router.push({
         path: '/formtest',
+      })
+    },
+    // 测试步进器组件
+    Stepdemo() {
+      this.$router.push({
+        path: '/setptest',
       })
     },
   },
