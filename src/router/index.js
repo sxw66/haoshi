@@ -54,6 +54,26 @@ const routes = [
     },
     component: () => import('@/views/formdemo/Formtest.vue'),
   },
+  // 步进器
+  {
+    path: '/setptest',
+    name: 'setptest',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/setp.vue'),
+  },
+  // demo
+  {
+    path: '/demotest',
+    name: 'demotest',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/index.vue'),
+  },
 ]
 
 const router = new VueRouter({
