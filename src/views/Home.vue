@@ -8,7 +8,7 @@
         <el-button type="primary" @click="PLdemo">评论组件demo</el-button>
         <el-button type="success" @click="Fromdemo">element表单-demo</el-button>
         <el-button type="info" @click="Stepdemo">Step步进器-demo</el-button>
-        <el-button type="warning">警告按钮</el-button>
+        <el-button type="warning" @click="Tsetdemo">TSET按钮</el-button>
         <el-button type="danger">危险按钮</el-button>
       </div>
     </el-container>
@@ -73,6 +73,12 @@ export default {
     Stepdemo() {
       this.$router.push({
         path: '/setptest',
+      })
+    },
+    // 未知的测试组件
+    Tsetdemo() {
+      this.$router.push({
+        path: '/demotest',
       })
     },
   },
