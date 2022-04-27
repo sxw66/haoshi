@@ -32,7 +32,7 @@ const routes = [
       auth: false,
       keepAlive: true,
     },
-    component: () => import('@/views/Vuextest.vue'),
+    component: () => import('@/views/demo/Vuexdemo/Vuextest.vue'),
   },
   // 评论组件-demo
   {
@@ -42,7 +42,7 @@ const routes = [
       auth: false,
       keepAlive: true,
     },
-    component: () => import('@/views/Comment/Vuecomment.vue'),
+    component: () => import('@/views/demo/Comment/Vuecomment.vue'),
   },
   // element 表单组件-demo
   {
@@ -52,7 +52,7 @@ const routes = [
       auth: false,
       keepAlive: true,
     },
-    component: () => import('@/views/formdemo/Formtest.vue'),
+    component: () => import('@/views/demo/formdemo/Formtest.vue'),
   },
   // 步进器
   {
@@ -62,18 +62,29 @@ const routes = [
       auth: false,
       keepAlive: true,
     },
-    component: () => import('@/views/setp.vue'),
+    component: () => import('@/views/demo/setpdemo/setp.vue'),
   },
-  // demo
+  // charts表
   {
-    path: '/demotest',
-    name: 'demotest',
+    path: '/chartsdemo',
+    name: 'chartsdemo',
     meta: {
       auth: false,
       keepAlive: true,
     },
-    component: () => import('@/views/demo/index.vue'),
+    component: () => import('../views/demo/chartsdemo'),
   },
+
+  // demo
+  // {
+  //   path: '/demotest',
+  //   name: 'demotest',
+  //   meta: {
+  //     auth: false,
+  //     keepAlive: true,
+  //   },
+  //   component: () => import('@/views/demo/index.vue'),
+  // },
 ]
 
 const router = new VueRouter({

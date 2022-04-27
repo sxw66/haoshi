@@ -3,7 +3,8 @@
     <!-- 步进器 -->
     <el-card class="box-card">
       <h4>步进器</h4>
-      <setp v-model="num" :precision="2" :step="0.11" :max="10"></setp>
+      <setp v-model="num" :max="1000"></setp>
+      <el-input v-model="num" placeholder="111111111"></el-input>
     </el-card>
     <hr />
     <el-card class="box-card">
@@ -24,7 +25,7 @@
 </template>
 
 <script>
-import setp from '../components/setp.vue'
+import setp from '../../../components/setp/setp.vue'
 export default {
   components: {
     setp,

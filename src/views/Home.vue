@@ -12,18 +12,68 @@
         <el-button type="danger">危险按钮</el-button>
       </div>
     </el-container>
-    <div class="demo-image__placeholder">
-      <div class="block" style="display: flex; margin-top: 10px">
-        <el-image
-          :preview-src-list="srcList"
-          src="https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg"
-        ></el-image>
-        <el-image
-          :preview-src-list="srcList"
-          src="https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg"
-        ></el-image>
-      </div>
-    </div>
+
+    <!-- vuex组件demo -->
+    <el-card class="box-card1">
+      <span>vuex组件demo</span>
+      <el-button
+        style="float: right; padding: 3px 0"
+        type="text"
+        @click="Vuexdemo"
+        >GO 学习</el-button
+      >
+    </el-card>
+    <!-- 评论组件demo -->
+    <el-card class="box-card2">
+      <span>评论组件demo</span>
+      <el-button
+        style="float: right; padding: 3px 0"
+        type="text"
+        @click="PLdemo"
+        >GO 学习</el-button
+      >
+    </el-card>
+    <!-- element表单-demo -->
+    <el-card class="box-card3">
+      <span>element表单-demo</span>
+      <el-button
+        style="float: right; padding: 3px 0"
+        type="text"
+        @click="Fromdemo"
+        >GO 学习</el-button
+      >
+    </el-card>
+    <!-- Step步进器-demo -->
+    <el-card class="box-card4">
+      <span>Step步进器-demo</span>
+      <el-button
+        style="float: right; padding: 3px 0"
+        type="text"
+        @click="Stepdemo"
+        >GO 学习</el-button
+      >
+    </el-card>
+    <!-- Echartsdemo图表结构 -->
+    <el-card class="box-card5">
+      <span>Echarts 多种图表结构</span>
+      <el-button
+        style="float: right; padding: 3px 0"
+        type="text"
+        @click="Echartsdemo"
+        >GO 学习</el-button
+      >
+    </el-card>
+
+    <!-- TSET按钮 -->
+    <el-card class="box-card5">
+      <span>TSET按钮</span>
+      <el-button
+        style="float: right; padding: 3px 0"
+        type="text"
+        @click="Tsetdemo"
+        >GO 学习</el-button
+      >
+    </el-card>
   </div>
 </template>
 
@@ -75,6 +125,12 @@ export default {
         path: '/setptest',
       })
     },
+    // Echartsdemo图表结构
+    Echartsdemo() {
+      this.$router.push({
+        path: '/chartsdemo',
+      })
+    },
     // 未知的测试组件
     Tsetdemo() {
       this.$router.push({
@@ -92,5 +148,28 @@ export default {
   color: #333;
   text-align: center;
   line-height: 60px;
+}
+.box-card1 {
+  border: 1px solid #ebeef5;
+  background-color: #0fffc8;
+  color: #303133;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+.box-card2 {
+  margin-top: 5px;
+  background: #d7309f;
+}
+.box-card3 {
+  margin-top: 5px;
+  background: #5c5f9b;
+}
+.box-card4 {
+  margin-top: 5px;
+  background: #e7d80c26;
+}
+.box-card5 {
+  margin-top: 5px;
+  background: #f80404;
 }
 </style>
