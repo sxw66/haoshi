@@ -14,6 +14,12 @@
       </el-form>
     </el-card>
     <hr />
+    <input type="text" v-model="shuru" /> <br />
+    <ul>
+      <li v-for="(p, index) in filterpersons" :key="index">
+        {{ p.namee }}----{{ p.age }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -35,6 +41,12 @@ export default {
         number3: 5,
         number4: 5,
       },
+      persons: [
+        { namee: 'xuhaitao', age: 33 },
+        { namee: 'hunk', age: 45 },
+        { namee: 'xuhaihuan', age: 30 },
+      ],
+      shuru: 'x',
     }
   },
   methods: {
@@ -50,6 +62,21 @@ export default {
   computed: {
     computedTrim() {
       return this.str1.trim()
+    },
+
+    filterpersons() {
+      const { persons, shuru } = this
+
+      return persons.filter((item) => {
+        return item.namee.indexOf(shuru.trim()) >= 0
+      })
+
+      //另一种写法 ，匿名函数
+      /*
+                return this.persons.filter(function (item) {
+                    return item.namee.indexOf(shuru)>=0;
+                })
+                */
     },
   },
 }
