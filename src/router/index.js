@@ -76,15 +76,15 @@ const routes = [
   },
 
   // demo
-  // {
-  //   path: '/demotest',
-  //   name: 'demotest',
-  //   meta: {
-  //     auth: false,
-  //     keepAlive: true,
-  //   },
-  //   component: () => import('@/views/demo/index.vue'),
-  // },
+  {
+    path: '/lessdemo',
+    name: 'lessdemo',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/lessdemo/index.vue'),
+  },
 ]
 
 const router = new VueRouter({
