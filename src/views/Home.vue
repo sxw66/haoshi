@@ -8,22 +8,58 @@
         <el-button type="primary" @click="PLdemo">评论组件demo</el-button>
         <el-button type="success" @click="Fromdemo">element表单-demo</el-button>
         <el-button type="info" @click="Stepdemo">Step步进器-demo</el-button>
-        <el-button type="warning" @click="Tsetdemo">TSET按钮</el-button>
+        <el-button type="warning" @click="Lessdemo">TSET按钮</el-button>
         <el-button type="danger">危险按钮</el-button>
       </div>
     </el-container>
-    <div class="demo-image__placeholder">
-      <div class="block" style="display: flex; margin-top: 10px">
-        <el-image
-          :preview-src-list="srcList"
-          src="https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg"
-        ></el-image>
-        <el-image
-          :preview-src-list="srcList"
-          src="https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg"
-        ></el-image>
+
+    <!-- vuex组件demo -->
+    <el-card class="box-card1">
+      <div class="explain-content">
+        <div>vuex组件demo</div>
+        <el-button type="success" @click="Vuexdemo">GO 学习</el-button>
       </div>
-    </div>
+    </el-card>
+
+    <!-- 评论组件demo -->
+    <el-card class="box-card2">
+      <div class="explain-content">
+        <div>评论组件demo</div>
+        <el-button type="success" @click="PLdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- element表单-demo -->
+    <el-card class="box-card3">
+      <div class="explain-content">
+        <div>element表单-demo</div>
+        <el-button type="success" @click="Fromdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- Step步进器-demo -->
+    <el-card class="box-card4">
+      <div class="explain-content">
+        <div>Step步进器-demo</div>
+        <el-button type="success" @click="Stepdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- Echartsdemo图表结构 -->
+    <el-card class="box-card5">
+      <div class="explain-content">
+        <div>Echarts 多种图表结构</div>
+        <el-button type="success" @click="Echartsdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- Less 变量循环demo -->
+    <el-card class="box-card6">
+      <div class="explain-content">
+        <div>Less 变量循环 demo</div>
+        <el-button type="success" @click="Lessdemo">GO 学习</el-button>
+      </div>
+    </el-card>
   </div>
 </template>
 
@@ -75,10 +111,16 @@ export default {
         path: '/setptest',
       })
     },
-    // 未知的测试组件
-    Tsetdemo() {
+    // Echartsdemo图表结构
+    Echartsdemo() {
       this.$router.push({
-        path: '/demotest',
+        path: '/chartsdemo',
+      })
+    },
+    //  Less demo变量组件
+    Lessdemo() {
+      this.$router.push({
+        path: '/lessdemo',
       })
     },
   },
@@ -92,5 +134,70 @@ export default {
   color: #333;
   text-align: center;
   line-height: 60px;
+}
+.explain-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+.box-card1 {
+  border: 1px solid #ebeef5;
+  background-color: #0fffc8;
+  color: #303133;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+.box-card2 {
+  margin-top: 5px;
+  background: #d7309f;
+}
+.box-card3 {
+  margin-top: 5px;
+  background: #5c5f9b;
+}
+.box-card4 {
+  margin-top: 5px;
+  background: #004680; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4484ba,
+    #004680
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4484ba,
+    #004680
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box-card5 {
+  margin-top: 5px;
+  background: #ff1e56; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1e90ff,
+    #f9c942,
+    #ff1e56
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1e90ff,
+    #f9c942,
+    #ff1e56
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box-card6 {
+  margin-top: 5px;
+  background: #7ec6bc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ebe717,
+    #7ec6bc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ebe717,
+    #7ec6bc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 </style>
