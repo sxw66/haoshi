@@ -3,6 +3,7 @@
     <h1>这是一个评论测试页面</h1>
     <hr />
     <comment
+      @doSend="fn"
       @doChidSend="sendfn"
       :commentList="list"
       label="作者师浩浩"
@@ -76,6 +77,19 @@ export default {
         })
       })
       console.log('this.$refs.3333', this.$refs.abc.commentList)
+    },
+    fn(val) {
+      console.log(val)
+      this.list.push({
+        id: 1,
+        content: val,
+        commentUser: {
+          id: 1,
+          nickName: '师浩浩',
+          avatar:
+            'https://img1.baidu.com/it/u=1632120736,2257211314&fm=253&fmt=auto&app=138&f=JPEG?w=563&h=500',
+        },
+      })
     },
   },
 }
