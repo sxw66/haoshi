@@ -11,6 +11,7 @@
           :autosize="{ minRows: minRows, maxRows: maxRows }"
           :placeholder="placeholder"
           v-model="textareaMap[0]"
+          :clearable="true"
         >
         </el-input>
 
@@ -534,29 +535,6 @@ export default {
 .btn-cancel {
   background: grey; /* 背景颜色 */
 }
-
-.tmsgBox {
-  position: relative;
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-.tmsg-respond h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-.tmsg-respond h3 small {
-  font-size: smaller;
-  cursor: pointer;
-}
-.tmsg-respond textarea {
-  background: #f4f6f7;
-  height: 100px;
-  margin-bottom: 10px;
-}
-
 .OwO {
   position: relative;
   z-index: 1;
