@@ -85,6 +85,16 @@ const routes = [
     },
     component: () => import('@/views/demo/lessdemo/index.vue'),
   },
+  // input
+  {
+    path: '/inputdemo',
+    name: 'inputdemo',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/input/inputtest.vue'),
+  },
 ]
 
 const router = new VueRouter({

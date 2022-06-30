@@ -60,6 +60,14 @@
         <el-button type="success" @click="Lessdemo">GO 学习</el-button>
       </div>
     </el-card>
+
+    <!-- input 复合型输入框demo -->
+    <el-card class="box-card7">
+      <div class="explain-content">
+        <div>复合型输入框 demo</div>
+        <el-button type="success" @click="Compoundinput">GO 学习</el-button>
+      </div>
+    </el-card>
   </div>
 </template>
 
@@ -121,6 +129,12 @@ export default {
     Lessdemo() {
       this.$router.push({
         path: '/lessdemo',
+      })
+    },
+    // input 复合型输入框demo
+    Compoundinput() {
+      this.$router.push({
+        path: '/inputdemo',
       })
     },
   },
@@ -198,6 +212,26 @@ export default {
     to right,
     #ebe717,
     #7ec6bc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box-card7 {
+  margin-top: 5px;
+  background: #051937; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a8eb12,
+    #00bf72,
+    #008793,
+    #004d7a,
+    #051937
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #a8eb12,
+    #00bf72,
+    #008793,
+    #004d7a,
+    #051937
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 </style>
