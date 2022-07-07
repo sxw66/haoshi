@@ -76,6 +76,14 @@
         <el-button type="success" @click="Compoundtabs">GO 学习</el-button>
       </div>
     </el-card>
+
+    <!-- map 地图demo -->
+    <el-card class="box-card7">
+      <div class="explain-content">
+        <div>地图 demo</div>
+        <el-button type="success" @click="Compoundmap">GO 学习</el-button>
+      </div>
+    </el-card>
   </div>
 </template>
 
@@ -149,6 +157,12 @@ export default {
     Compoundtabs() {
       this.$router.push({
         path: '/tabsdemo',
+      })
+    },
+   // tabs 标签页demo
+    Compoundmap() {
+      this.$router.push({
+        path: '/mapdemo',
       })
     },
   },

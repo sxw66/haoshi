@@ -105,6 +105,16 @@ const routes = [
     },
     component: () => import('@/views/demo/tabs/tabsdemo.vue'),
   },
+  // tabs
+  {
+    path: '/mapdemo',
+    name: 'mapdemo',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/map/map.vue'),
+  },
 ]
 
 const router = new VueRouter({
