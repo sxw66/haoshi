@@ -68,6 +68,14 @@
         <el-button type="success" @click="Compoundinput">GO 学习</el-button>
       </div>
     </el-card>
+
+    <!-- tabs 标签页demo -->
+    <el-card class="box-card7">
+      <div class="explain-content">
+        <div>标签页 demo</div>
+        <el-button type="success" @click="Compoundtabs">GO 学习</el-button>
+      </div>
+    </el-card>
   </div>
 </template>
 
@@ -135,6 +143,12 @@ export default {
     Compoundinput() {
       this.$router.push({
         path: '/inputdemo',
+      })
+    },
+    // tabs 标签页demo
+    Compoundtabs() {
+      this.$router.push({
+        path: '/tabsdemo',
       })
     },
   },

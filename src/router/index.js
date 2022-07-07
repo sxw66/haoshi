@@ -95,6 +95,16 @@ const routes = [
     },
     component: () => import('@/views/demo/input/inputtest.vue'),
   },
+  // tabs
+  {
+    path: '/tabsdemo',
+    name: 'tabsdemo',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/tabs/tabsdemo.vue'),
+  },
 ]
 
 const router = new VueRouter({
