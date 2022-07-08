@@ -105,7 +105,7 @@ const routes = [
     },
     component: () => import('@/views/demo/tabs/tabsdemo.vue'),
   },
-  // tabs
+  // map
   {
     path: '/mapdemo',
     name: 'mapdemo',
@@ -114,6 +114,16 @@ const routes = [
       keepAlive: true,
     },
     component: () => import('@/views/demo/map/map.vue'),
+  },
+  // editor
+  {
+    path: '/editordemo',
+    name: 'editordemo',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/editor/editor.vue'),
   },
 ]
 

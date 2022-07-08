@@ -84,6 +84,14 @@
         <el-button type="success" @click="Compoundmap">GO 学习</el-button>
       </div>
     </el-card>
+
+    <!-- editor 富文本demo-->
+    <el-card class="box-card9">
+      <div class="explain-content">
+        <div>富文本 demo</div>
+        <el-button type="success" @click="Compoundeditor">GO 学习</el-button>
+      </div>
+    </el-card>
   </div>
 </template>
 
@@ -159,10 +167,16 @@ export default {
         path: '/tabsdemo',
       })
     },
-   // tabs 标签页demo
+    // tabs 标签页demo
     Compoundmap() {
       this.$router.push({
         path: '/mapdemo',
+      })
+    },
+    // editor 富文本demo
+    Compoundeditor() {
+      this.$router.push({
+        path: '/editordemo',
       })
     },
   },
@@ -260,6 +274,19 @@ export default {
     #008793,
     #004d7a,
     #051937
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.box-card9 {
+  background: #6025f5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff5555,
+    #6025f5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff5555,
+    #6025f5
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 </style>
