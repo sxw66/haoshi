@@ -125,6 +125,15 @@ const routes = [
     },
     component: () => import('@/views/demo/editor/editor.vue'),
   },
+  {
+    path: '/headsetdemo',
+    name: 'headsetdemo',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/headset/headsetdemo.vue'),
+  },
 ]
 
 const router = new VueRouter({
