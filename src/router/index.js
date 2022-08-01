@@ -134,6 +134,15 @@ const routes = [
     },
     component: () => import('@/views/demo/headset/headsetdemo.vue'),
   },
+  {
+    path: '/audiodemo',
+    name: 'audiodemo',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/audio/audiodemo.vue'),
+  },
 ]
 
 const router = new VueRouter({
