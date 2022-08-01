@@ -16,6 +16,7 @@
     "element-ui": "^2.15.6",
     "less": "^4.1.2",
     "less-loader": "^6.0.0",
+    "lottie-web": "^5.9.6",
     "node-sass": "^7.0.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
