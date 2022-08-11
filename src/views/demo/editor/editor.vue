@@ -22,32 +22,32 @@ import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 export default {
   name: 'MyEditor',
   components: { Editor, Toolbar },
-  data () {
+  data() {
     return {
       editor: null,
       html: '<p>hello&nbsp;world</p>',
       toolbarConfig: {},
       editorConfig: {
-        placeholder: '请输入内容...'
-      }
+        placeholder: '请输入内容...',
+      },
     }
   },
-  mounted () {
+  mounted() {
     // 模拟 ajax 请求，异步渲染编辑器
     setTimeout(() => {
       this.html = '<p>Ajax 异步设置内容 HTML</p>'
     }, 1500)
   },
-  beforeDestroy () {
+  beforeDestroy() {
     const editor = this.editor
     if (editor == null) return
     editor.destroy() // 组件销毁时，及时销毁 editor ，重要！！！
   },
   methods: {
-    onCreated (editor) {
+    onCreated(editor) {
       this.editor = Object.seal(editor) // 【注意】一定要用 Object.seal() 否则会报错
-    }
-  }
+    },
+  },
 }
 </script>
 

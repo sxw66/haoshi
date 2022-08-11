@@ -1,49 +1,73 @@
 <template>
   <!-- 首页 -->
   <div class="home">
-    <el-header>Welcome SH组件库</el-header>
+    <el-header>Welcome 大白菜系统</el-header>
     <el-container>
-      <el-aside width="200px">
-        <el-menu
-          default-active="2"
-          class="el-menu-vertical-demo"
-          @open="handleOpen"
-          @close="handleClose"
-          background-color="#545c64"
-          text-color="#fff"
-          active-text-color="#ffd04b"
-        >
-          <el-submenu index="1">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>数据录入</span>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="1-1">Echartsdemo图表结构</el-menu-item>
-              <el-menu-item index="1-2">表单组件</el-menu-item>
-              <el-menu-item index="1-3">图片上传组件</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-menu-item index="2">
-            <i class="el-icon-menu"></i>
-            <span slot="title">导航二</span>
-          </el-menu-item>
-          <el-menu-item index="3">
-            <i class="el-icon-document"></i>
-            <span slot="title">导航三</span>
-          </el-menu-item>
-          <el-menu-item index="4">
-            <i class="el-icon-setting"></i>
-            <span slot="title">导航四</span>
-          </el-menu-item>
-        </el-menu>
-      </el-aside>
-      <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
-        <el-footer>Footer</el-footer>
-      </el-container>
+      <div style="display: flex; margin-top: 10px">
+        <el-button @click="Vuexdemo">vuex组件demo</el-button>
+        <el-button type="primary" @click="PLdemo">评论组件demo</el-button>
+        <el-button type="success" @click="Fromdemo">element表单-demo</el-button>
+        <el-button type="info" @click="Stepdemo">Step步进器-demo</el-button>
+        <el-button type="warning" @click="Lessdemo">TSET按钮</el-button>
+        <el-button type="danger">危险按钮</el-button>
+      </div>
     </el-container>
+
+    <!-- vuex组件demo -->
+    <el-card class="box-card1">
+      <div class="explain-content">
+        <div>vuex组件demo</div>
+        <el-button type="success" @click="Vuexdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- 评论组件demo -->
+    <el-card class="box-card2">
+      <div class="explain-content">
+        <div>评论组件demo</div>
+        <el-button type="success" @click="PLdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- element表单-demo -->
+    <el-card class="box-card3">
+      <div class="explain-content">
+        <div>element表单-demo</div>
+        <el-button type="success" @click="Fromdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- Step步进器-demo -->
+    <el-card class="box-card4">
+      <div class="explain-content">
+        <div>Step步进器-demo</div>
+        <el-button type="success" @click="Stepdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- Echartsdemo图表结构 -->
+    <el-card class="box-card5">
+      <div class="explain-content">
+        <div>Echarts 多种图表结构</div>
+        <el-button type="success" @click="Echartsdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- Less 变量循环demo -->
+    <el-card class="box-card6">
+      <div class="explain-content">
+        <div>Less 变量循环 demo</div>
+        <el-button type="success" @click="Lessdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- input 复合型输入框demo -->
+    <el-card class="box-card7">
+      <div class="explain-content">
+        <div>复合型输入框 demo</div>
+        <el-button type="success" @click="Compoundinput">GO 学习</el-button>
+      </div>
+    </el-card>
   </div>
 </template>
 
@@ -62,20 +86,9 @@ export default {
         require('../assets/coco.png'),
       ],
       isCollapse: true,
-      activeIndex: '1',
-      activeIndex2: '1',
     }
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath)
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath)
-    },
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath)
-    },
     // 测试评论组件
     PLdemo() {
       this.$router.push({
@@ -124,70 +137,11 @@ export default {
         path: '/inputdemo',
       })
     },
-    // tabs 标签页demo
-    Compoundtabs() {
-      this.$router.push({
-        path: '/tabsdemo',
-      })
-    },
-    // tabs 标签页demo
-    Compoundmap() {
-      this.$router.push({
-        path: '/mapdemo',
-      })
-    },
-    // editor 富文本demo
-    Compoundeditor() {
-      this.$router.push({
-        path: '/editordemo',
-      })
-    },
   },
 }
 </script>
 
 <style scoped lang="less">
-.home {
-  box-sizing: border-box;
-  .el-container {
-    height: 100vh;
-  }
-}
-
-.el-header,
-.el-footer {
-  background-color: #b3c0d1;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-}
-
-.el-aside {
-  background-color: #d3dce6;
-  color: #333;
-  text-align: center;
-  line-height: 200px;
-}
-
-.el-main {
-  background-color: #e9eef3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
-}
-
-body > .el-container {
-  margin-bottom: 40px;
-}
-
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-  line-height: 260px;
-}
-
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
-}
 .el-header,
 .el-footer {
   background: linear-gradient(to right, rgb(31, 31, 103), rgb(241, 199, 206));
@@ -278,19 +232,6 @@ body > .el-container {
     #008793,
     #004d7a,
     #051937
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.box-card9 {
-  background: #6025f5; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ff5555,
-    #6025f5
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ff5555,
-    #6025f5
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 </style>

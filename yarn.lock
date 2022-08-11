@@ -1597,10 +1597,10 @@
   "resolved" "https://registry.npmmirror.com/@vue/web-component-wrapper/-/web-component-wrapper-1.3.0.tgz"
   "version" "1.3.0"
 
-"@wangeditor/basic-modules@^1.1.1", "@wangeditor/basic-modules@1.x":
-  "integrity" "sha512-tQl2Pw8M2g3CM+ESx2phzr9zSKeuFCM1AMBoPdnlbatU7Dnae0CsEB/b3C+gI0dIQzM2jh34yTmqgbbhrwuRLg=="
-  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/basic-modules/-/basic-modules-1.1.1.tgz"
-  "version" "1.1.1"
+"@wangeditor/basic-modules@^1.1.3", "@wangeditor/basic-modules@1.x":
+  "integrity" "sha512-TGJix4UelO46yAgwI946ctx4lSIJbYBwNvjSJ9Tf8mKr0WMCeLVBV+MV85rXPsfcmWtR4wBNwSg648Z+RbqRUg=="
+  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/basic-modules/-/basic-modules-1.1.3.tgz"
+  "version" "1.1.3"
   dependencies:
     "is-url" "^1.2.4"
 
@@ -1611,10 +1611,10 @@
   dependencies:
     "prismjs" "^1.23.0"
 
-"@wangeditor/core@^1.1.1", "@wangeditor/core@1.x":
-  "integrity" "sha512-SrbvOGlONMNMOeFIJI7fC9x0/6T6LvQHTITPCqjgbCm2QF+POcrHzRKGQOqKCsyKi9UJz9hLsjsvJnvP10rxjQ=="
-  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/core/-/core-1.1.1.tgz"
-  "version" "1.1.1"
+"@wangeditor/core@^1.1.11", "@wangeditor/core@1.x":
+  "integrity" "sha512-BwHVRJzESnkjKikTc2U2zsbd06l1pSo7qKy5+SpZLudYWrFxmd85VN+5GxM57FodogkNw/k04DFHcFSUfXcaKA=="
+  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/core/-/core-1.1.11.tgz"
+  "version" "1.1.11"
   dependencies:
     "@types/event-emitter" "^0.3.3"
     "event-emitter" "^0.3.5"
@@ -1628,20 +1628,20 @@
   "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/editor-for-vue/-/editor-for-vue-1.0.2.tgz"
   "version" "1.0.2"
 
-"@wangeditor/editor@>=5.1.0":
-  "integrity" "sha512-BtccuHFm0QvYunIhIu7tllQWkwppkmEkD3OJ5Mn+F0REPQ/Z3HiEXbtlss2t9c/kHO4CtiFwv2XD/k/VEg7taA=="
-  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/editor/-/editor-5.1.1.tgz"
-  "version" "5.1.1"
+"@wangeditor/editor@^5.1.14", "@wangeditor/editor@>=5.1.0":
+  "integrity" "sha512-erILPAkpKldyGi4cEwrOW65v12GhZy2qj2A8kPlypU46lE72Y3XowZxWogN1TI/mqMDR84AHr0QWOvygOV1xwQ=="
+  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/editor/-/editor-5.1.14.tgz"
+  "version" "5.1.14"
   dependencies:
     "@uppy/core" "^2.1.1"
     "@uppy/xhr-upload" "^2.0.3"
-    "@wangeditor/basic-modules" "^1.1.1"
+    "@wangeditor/basic-modules" "^1.1.3"
     "@wangeditor/code-highlight" "^1.0.2"
-    "@wangeditor/core" "^1.1.1"
+    "@wangeditor/core" "^1.1.11"
     "@wangeditor/list-module" "^1.0.2"
-    "@wangeditor/table-module" "^1.1.0"
+    "@wangeditor/table-module" "^1.1.1"
     "@wangeditor/upload-image-module" "^1.0.1"
-    "@wangeditor/video-module" "^1.1.0"
+    "@wangeditor/video-module" "^1.1.1"
     "dom7" "^3.0.0"
     "is-hotkey" "^0.2.0"
     "lodash.camelcase" "^4.3.0"
@@ -1660,20 +1660,20 @@
   "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/list-module/-/list-module-1.0.2.tgz"
   "version" "1.0.2"
 
-"@wangeditor/table-module@^1.1.0":
-  "integrity" "sha512-QpjCXSzsXcsR0pEI5Pu28e8aYh9+lHcVV4TTmGV6lRGE/etQF3PHUZNGUlfhkCgmGPq+E7n/Whb4RpAM3PJVhw=="
-  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/table-module/-/table-module-1.1.0.tgz"
-  "version" "1.1.0"
+"@wangeditor/table-module@^1.1.1":
+  "integrity" "sha512-VPjEWQtncS2DsXYXiHUxPSxn2Xhc8GdhG3la7N5YhvxQde1+4N0SZLXeWsYvbGzOq4um5XToq5pktLLbE8G+EA=="
+  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/table-module/-/table-module-1.1.1.tgz"
+  "version" "1.1.1"
 
 "@wangeditor/upload-image-module@^1.0.1":
   "integrity" "sha512-vgUV4ENttTITblqtVuzleIq732OmzmzzgrIvX6b3GRGPSw5u8glJ/87tOEhvHjHECc4oFo18B7xzJ1GpBj79/w=="
   "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/upload-image-module/-/upload-image-module-1.0.1.tgz"
   "version" "1.0.1"
 
-"@wangeditor/video-module@^1.1.0":
-  "integrity" "sha512-VR6x7Vk9ebvXtxCPwobiNiTGZGgqEzCVc6ViWlNH3v4jlDIeo/s7N7OCgpvELR7X/X7GHecBu7wySDkHIskB5w=="
-  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/video-module/-/video-module-1.1.0.tgz"
-  "version" "1.1.0"
+"@wangeditor/video-module@^1.1.1":
+  "integrity" "sha512-6gzpS5cnJihW2T0HFjqmbv6v8ouyaeMUjdM2X8BPohwD74p1ov00dCmRt5QekNTyYSmRHK0ASkUMOvRGqaDxMg=="
+  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/@wangeditor/video-module/-/video-module-1.1.1.tgz"
+  "version" "1.1.1"
 
 "@webassemblyjs/ast@1.9.0":
   "integrity" "sha512-C6wW5L+b7ogSDVqymbkkvuW9kruN//YisMED04xzeBBqjHa2FYnmvOlS6Xj68xWQRgWvI9cIglsjFowH/RJyEA=="
@@ -6127,6 +6127,11 @@
   "integrity" "sha512-G6A/nJLRgWOuuwdNuA6koovfEV1YpqqAG4pRUlFaz3jj2QNZ8M4vBqnVA+HBTmU/AMNUtlOsMmSpF6NyOjztbA=="
   "resolved" "https://registry.npmmirror.com/loglevel/-/loglevel-1.8.0.tgz"
   "version" "1.8.0"
+
+"lottie-web@^5.9.6":
+  "integrity" "sha512-JFs7KsHwflugH5qIXBpB4905yC1Sub2MZWtl/elvO/QC6qj1ApqbUZJyjzJseJUtVpgiDaXQLjBlIJGS7UUUXA=="
+  "resolved" "http://nrm.recloud.com.cn:8081/repository/npm-all/lottie-web/-/lottie-web-5.9.6.tgz"
+  "version" "5.9.6"
 
 "lower-case@^1.1.1":
   "integrity" "sha512-2Fgx1Ycm599x+WGpIYwJOvsjmXFzTSc34IwDWALRA/8AopUKAVPwfJ+h5+f85BCp0PWmmJcWzEpxOpoXycMpdA=="
