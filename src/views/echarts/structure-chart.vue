@@ -9,6 +9,8 @@
 </template>
 
 <script>
+/* eslint-disable prettier/prettier */
+/* eslint-disable prettier/prettier */
 import echarts from 'echarts'
 export default {
   data() {
