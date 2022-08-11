@@ -1,41 +1,18 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
+import getters from "./getters";
+const path = require("path");
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-
-const state = {
-  testMsg: '原始文本',
-  childText: '子组件原始文本',
-}
-
-const mutations = {
-  changeTestMsg(state, str) {
-    state.testMsg = str
-  },
-  changeChildText(state, str) {
-    state.childText = str
-  },
-}
-
+const files = require.context("./modules", false, /\.js$/);
+let modules = {};
+files.keys().forEach(key => {
+  let name = path.basename(key, ".js");
+  modules[name] = files(key).default || files(key);
+});
 const store = new Vuex.Store({
-  state: state,     // data
-  mutations: mutations,// 方法
-  getters: undefined, // 计算属性
-  actions: undefined, // 异步操作
-  modules: undefined, // 小的模块化
-})
-
-export default store
-
-// const state = {}
-// const store = new Vuex.Store({
-//     state,
-//     mutations: {},
-//     getters: {},
-//     actions: {},
-//     modules: {}
-// })
-// export default store
-
-
+  modules,
+  getters
+});
+export default store;
