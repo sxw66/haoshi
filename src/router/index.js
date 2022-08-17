@@ -125,6 +125,7 @@ const routes = [
     },
     component: () => import('@/views/demo/editor/editor.vue'),
   },
+  // 头像组-demo
   {
     path: '/headsetdemo',
     name: 'headsetdemo',
@@ -134,6 +135,7 @@ const routes = [
     },
     component: () => import('@/views/demo/headset/headsetdemo.vue'),
   },
+  // 动画-demo
   {
     path: '/audiodemo',
     name: 'audiodemo',
@@ -142,6 +144,16 @@ const routes = [
       keepAlive: true,
     },
     component: () => import('@/views/demo/audio/audiodemo.vue'),
+  },
+  // XPC - 测试包
+  {
+    path: '/xpcdemo',
+    name: 'xpcdemo',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/xpc/xpcdemo.vue'),
   },
 ]
 

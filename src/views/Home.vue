@@ -9,7 +9,8 @@
         <el-button type="success" @click="Fromdemo">element表单-demo</el-button>
         <el-button type="info" @click="Stepdemo">Step步进器-demo</el-button>
         <el-button type="warning" @click="Lessdemo">TSET按钮</el-button>
-        <el-button type="danger">危险按钮</el-button>
+        <el-button type="danger" @click="Cartoondemo">动画</el-button>
+        <el-button type="danger" @click="Headsetdemo">头像组</el-button>
       </div>
     </el-container>
 
@@ -135,6 +136,18 @@ export default {
     Compoundinput() {
       this.$router.push({
         path: '/inputdemo',
+      })
+    },
+    // 头像组 demo 
+    Headsetdemo() {
+      this.$router.push({
+        path: '/headsetdemo',
+      })
+    },
+    // 动画 demo 
+    Cartoondemo() {
+      this.$router.push({
+        path: '/audiodemo',
       })
     },
   },
