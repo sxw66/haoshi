@@ -11,6 +11,7 @@
         <el-button type="warning" @click="Lessdemo">TSET按钮</el-button>
         <el-button type="danger" @click="Cartoondemo">动画</el-button>
         <el-button type="danger" @click="Headsetdemo">头像组</el-button>
+        <el-button type="primary" @click="Slotdemo">VUE插槽demo</el-button>
       </div>
     </el-container>
 
@@ -67,6 +68,22 @@
       <div class="explain-content">
         <div>复合型输入框 demo</div>
         <el-button type="success" @click="Compoundinput">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- 头像组 demo -->
+    <el-card class="box-card7">
+      <div class="explain-content">
+        <div>头像组 demo</div>
+        <el-button type="success" @click="Headsetdemo">GO 学习</el-button>
+      </div>
+    </el-card>
+
+    <!-- 动画 demo -->
+    <el-card class="box-card7">
+      <div class="explain-content">
+        <div>动画 demo</div>
+        <el-button type="success" @click="Cartoondemo">GO 学习</el-button>
       </div>
     </el-card>
   </div>
@@ -138,16 +155,22 @@ export default {
         path: '/inputdemo',
       })
     },
-    // 头像组 demo 
+    // 头像组 demo
     Headsetdemo() {
       this.$router.push({
         path: '/headsetdemo',
       })
     },
-    // 动画 demo 
+    // 动画 demo
     Cartoondemo() {
       this.$router.push({
         path: '/audiodemo',
+      })
+    },
+    // vue 插槽 demo
+    Slotdemo() {
+      this.$router.push({
+        path: '/slotdemo',
       })
     },
   },

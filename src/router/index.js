@@ -155,6 +155,16 @@ const routes = [
     },
     component: () => import('@/views/demo/xpc/xpcdemo.vue'),
   },
+  // VUE  - 插槽案例
+  {
+    path: '/slotdemo',
+    name: 'slotdemo',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/slot/slotdemo.vue'),
+  },
 ]
 
 const router = new VueRouter({

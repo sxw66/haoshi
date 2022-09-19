@@ -1,5 +1,6 @@
 <template>
   <div>
+    <el-input-number v-model="num" :precision="4" :max="10"></el-input-number>
     <h1>form表单验证组件</h1>
     <rt-form ref="form" label-position="left" :model="formData" :rules="rules">
       <el-button type="primary">确认</el-button>
@@ -120,6 +121,7 @@ export default {
         age: '',
         school: '',
       },
+      num: -0.0875475479,
       ruleForm: {
         name: '',
         region: '',
