@@ -9,7 +9,7 @@
         <el-button type="success" @click="Fromdemo">element表单-demo</el-button>
         <el-button type="info" @click="Stepdemo">Step步进器-demo</el-button>
         <el-button type="warning" @click="Lessdemo">TSET按钮</el-button>
-        <el-button type="danger">危险按钮</el-button>
+        <el-button type="danger" @click="interview">前端面试题</el-button>
       </div>
     </el-container>
 
@@ -65,66 +65,72 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: "Home",
   mounted() {
-    console.log('登陆页过来的参数', this.$route.params.id)
+    console.log("登陆页过来的参数", this.$route.params.id);
     // 绘制图表
   },
   data() {
     return {
       srcList: [
-        'https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg',
-        'https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg',
-        require('../assets/coco.png'),
+        "https://fuss10.elemecdn.com/8/27/f01c15bb73e1ef3793e64e6b7bbccjpeg.jpeg",
+        "https://fuss10.elemecdn.com/1/8e/aeffeb4de74e2fde4bd74fc7b4486jpeg.jpeg",
+        require("../assets/coco.png"),
       ],
       isCollapse: true,
-    }
+    };
   },
   methods: {
     // 测试评论组件
     PLdemo() {
       this.$router.push({
-        path: '/Vuecomment',
-      })
+        path: "/Vuecomment",
+      });
     },
     // 测试VUEX组件
     Vuexdemo() {
       this.$router.push({
-        path: '/vuextest',
-      })
+        path: "/vuextest",
+      });
     },
     // 测试element表单组件
     Fromdemo() {
       this.$router.push({
-        path: '/formtest',
-      })
+        path: "/formtest",
+      });
     },
     // 测试图片上传组件
     Imgdemo() {
       this.$router.push({
-        path: '/formtest',
-      })
+        path: "/formtest",
+      });
     },
     // 测试步进器组件
     Stepdemo() {
       this.$router.push({
-        path: '/setptest',
-      })
+        path: "/setptest",
+      });
     },
     // Echartsdemo图表结构
     Echartsdemo() {
       this.$router.push({
-        path: '/chartsdemo',
-      })
+        path: "/chartsdemo",
+      });
     },
     //  Less demo变量组件
     Lessdemo() {
       this.$router.push({
-        path: '/lessdemo',
-      })
+        path: "/lessdemo",
+      });
+    },
+    //  Less demo变量组件
+    interview() {
+      this.$router.push({
+        path: "/interview",
+      });
     },
   },
-}
+};
 </script>
 
 <style scoped lang="less">

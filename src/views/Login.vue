@@ -65,7 +65,7 @@ export default {
     var validateMobile = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请输入手机号码'))
-      } else if (value !== '13637060395') {
+      } else if (value !== '1748931836@qq.com') {
         callback(new Error('手机号码不合法!'))
       } else {
         callback()

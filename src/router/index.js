@@ -85,6 +85,16 @@ const routes = [
     },
     component: () => import('@/views/demo/lessdemo/index.vue'),
   },
+  // interview 面试题
+  {
+    path: '/interview',
+    name: 'interview',
+    meta: {
+      auth: false,
+      keepAlive: true,
+    },
+    component: () => import('@/views/demo/interview/index.vue'),
+  },
 ]
 
 const router = new VueRouter({
