@@ -19,19 +19,39 @@
       <div class="demo-two">for 循环遍历</div>
       <div class="demo-two">for in 遍历下标</div>
       <div class="demo-two">forEach() 遍历数组获取每一个元素,没有返回值</div>
-      <div class="demo-two">indexOf() 遍历数组,返回元素在数组中第一次出现的下标</div>
-      <div class="demo-two">for of   遍历值 String 字符串 Array 数组 Set 集合Map</div>
-      <div class="demo-two">reduce() 遍历数组,返回参数函数里的返回值.一般作为累加器计算总价 </div>
-      <div class="demo-two">filter() 遍历数组,返回一个新数组:新数组由参数里,条件为true的元素组成.</div>
-      <div class="demo-two">map()    遍历数组,返回一个新数组,数组由参数里的返回值组成.必须使用return.</div>
-      <div class="demo-two">some()   遍历数组,返回参数函数里符合条件的元素,只要检测到有一个元素符合条件就return.</div>
-      <div class="demo-two">every()  遍历数组,判断数组元素是否全部符合函数参数里的条件,全部满足返回true,否则false.</div>
+      <div class="demo-two">
+        indexOf() 遍历数组,返回元素在数组中第一次出现的下标
+      </div>
+      <div class="demo-two">
+        for of 遍历值 String 字符串 Array 数组 Set 集合Map
+      </div>
+      <div class="demo-two">
+        reduce() 遍历数组,返回参数函数里的返回值.一般作为累加器计算总价
+      </div>
+      <div class="demo-two">
+        filter() 遍历数组,返回一个新数组:新数组由参数里,条件为true的元素组成.
+      </div>
+      <div class="demo-two">
+        map() 遍历数组,返回一个新数组,数组由参数里的返回值组成.必须使用return.
+      </div>
+      <div class="demo-two">
+        some()
+        遍历数组,返回参数函数里符合条件的元素,只要检测到有一个元素符合条件就return.
+      </div>
+      <div class="demo-two">
+        every()
+        遍历数组,判断数组元素是否全部符合函数参数里的条件,全部满足返回true,否则false.
+      </div>
     </div>
     <div class="interview-demo">
       <h3>3.数组对象去重</h3>
       <div class="demo-one">原数组{{ arrset }}</div>
       <div class="demo-one">去重后的数组{{ newarr }}</div>
       <el-button type="primary" @click="handerSet">点击去重</el-button>
+    </div>
+    <div class="interview-demo">
+      <h3>3.数组一些使用方法</h3>
+      <el-button type="success" @click="handerArr">数组的一些方法</el-button>
     </div>
   </div>
 </template>
@@ -42,12 +62,21 @@ export default {
   data() {
     return {
       arrset: [
-        { id: 1, name: "张三" },
-        { id: 2, name: "李四" },
-        { id: 3, name: "王五" },
-        { id: 2, name: "张三" },
+        { id: 1, name: "张三", age: 18 },
+        { id: 2, name: "李四", age: 19 },
+        { id: 3, name: "王五", age: 20 },
+        { id: 2, name: "张三", age: 21 },
+        { id: 5, name: undefined, age: undefined },
       ],
       newarr: [],
+      reduceArr: [1,2,4,6,78],
+      agearr: undefined,
+      a: undefined,
+      b: undefined,
+      c: undefined,
+      d: undefined,
+      e: undefined,
+      f: undefined,
     };
   },
   methods: {
@@ -61,6 +90,48 @@ export default {
         }
       });
       console.log(this.newarr);
+    },
+    handerArr() {
+      // 1.不能return 没有返回值无法中断一直循环结束
+      // this.arrset.forEach((item) => {
+      //   console.log("forEach 不能return 没有返回值无法中断", item);
+      // });
+      // 2.过滤筛选条件 找出年龄大于20的 有返回值
+      this.agearr = this.arrset.filter((item) => {
+        return item.age > 20;
+      });
+      console.log("filter 有返回值-----", this.agearr);
+      // 3.有返回值 可以链式调用
+      this.a = this.arrset
+        .map((item) => {
+          return item.age > 18 ? item : "";
+        })
+        .filter((item) => item);
+      console.log("map 有返回值-------", this.a);
+      // 4.只查找出数组中第一项的符合条件的后面的不会在执行
+      this.b = this.arrset.find((item) => {
+        return item != undefined;
+      });
+      console.log("find 有返回值找到一个就不会在找------", this.b);
+      // 5.只查找出数组中第一项的下标的后面的不会在执行
+      this.c = this.arrset.findIndex((item) => {
+        return item.age > 18;
+      });
+      console.log("findIndex 查找数组下标------", this.c);
+      // 6.返回布尔值 一个为真都为真
+      this.d = this.arrset.some((item) => {
+        return item.age > 18;
+      });
+      console.log("some 一个为真都为真------", this.d);
+      // 7.返回布尔值 一个为假都为假
+      this.e = this.arrset.every((item) => {
+        return item.age > 18;
+      });
+      // 8.数组进行求和 有返回值
+      this.f = this.reduceArr.reduce((item, t) => {
+        return item + t;
+      });
+      console.log("reduce 数组求和------", this.f);
     },
   },
   mounted() {
@@ -97,7 +168,7 @@ export default {
     console.log(fun instanceof Function); // true
 
     // Object.prototype.toString.call 最准确的判断数据类型
-    console.log("-----------Object.prototype.toString.call------------");
+    console.log("-------Object.prototype.toString.call--------");
     console.log(" 判断数字", Object.prototype.toString.call(3));
     console.log(" 判断字符串", Object.prototype.toString.call("hellow"));
     console.log(" 判断布尔值", Object.prototype.toString.call(true));
@@ -111,8 +182,8 @@ export default {
         type: "success",
       });
     }
-    for (const iterator of  this.arrset) {
-        console.log(11111,iterator);
+    for (const iterator of this.arrset) {
+      console.log(11111, iterator);
     }
   },
 };
