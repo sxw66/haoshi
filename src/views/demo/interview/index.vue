@@ -135,6 +135,17 @@ export default {
     },
   },
   mounted() {
+    // 1.var 声明的变量如果先使用默认会赋值为 undefined 然后在进行赋值
+    // 2.函数内部及对象内部 的var 和 let 声明的变量只能函数和对象内访问
+    // 3.var 可以重复声明let 和const (对象数组除外)不行
+    function oneFun() {
+      console.log("var", nameaa);
+      var nameaa = "小明";
+      let age = 18;
+      console.log("let", age);
+    }
+    console.log(window, oneFun());
+    // =========================================
     let bool = true; //Boolean
     let num = 1; //Number
     let str = "abc"; //String
